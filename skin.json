@@ -1,0 +1,52 @@
+{
+  "id": "bayern",
+  "name": "拜仁慕尼黑",
+  "nameEn": "FC Bayern München",
+  "author": "YG",
+  "version": "0.2.0",
+  "tagline": "真实赛场球员照片背景 · 主场红/客场白双配色 · 球员插画四主题 · 跟随原生亮暗主题",
+  "description": "以拜仁慕尼黑一线队为蓝本的皮肤：采用俱乐部色板（拜仁红 #DC052D、深红 #8B0F22、拜仁蓝 #0066B2、金 #C9A227），球衣配色可在「主场红 · 深红画布」与「客场白 · 纸白画布」之间整体切换。背景五档：16 名一线队球员的真实赛场照片（内联进 bundle，含来源记录）、程序绘制的球员球衣、阵容号码墙、安联球场光带、纯色。设置 → 通用 里可切换球衣配色、背景主题、背景球员与强调色，也可填入自定义背景图 URL。",
+  "tags": [
+    "bayern",
+    "fcb",
+    "football",
+    "soccer",
+    "red",
+    "white",
+    "photo",
+    "jersey",
+    "stadium",
+    "dark"
+  ],
+  "accent": "#DC052D",
+  "bodyAttr": "data-dsh-bayern",
+  "package": "dsh-client-ui-skin-bayern",
+  "wiring": {
+    "id": "ui-skin-bayern",
+    "bundleWired": false
+  },
+  "preview": {
+    "light": "preview/light.png",
+    "dark": "preview/dark.png"
+  },
+  "kits": [
+    "red",
+    "white"
+  ],
+  "backdrops": [
+    "photo",
+    "jersey",
+    "squad",
+    "stadium",
+    "plain"
+  ],
+  "accents": [
+    "red",
+    "crimson",
+    "blue",
+    "gold"
+  ],
+  "players": 16,
+  "photos": 16,
+  "order": 20
+}

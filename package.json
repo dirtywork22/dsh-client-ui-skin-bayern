@@ -1,0 +1,55 @@
+{
+  "name": "dsh-client-ui-skin-bayern",
+  "description": "FC Bayern München skin for the dsh web GUI — 拜仁红/客场白双配色, real match-photo backdrops for 16 first-team players plus drawn shirt / squad wall / Allianz-Arena art, switchable player & accent, follows the native light/dark theme",
+  "version": "0.3.0",
+  "type": "module",
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./client": "./lib/client.js",
+    "./package.json": "./package.json"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web"
+    }
+  },
+  "files": [
+    "lib",
+    "skin.json",
+    "cordis.patch.yml",
+    "README.md",
+    "LICENSE",
+    "preview",
+    "docs"
+  ],
+  "license": "MIT",
+  "peerDependencies": {
+    "react": "^18.2.0",
+    "@deepseek-ai/cordis": "^4.0.1"
+  },
+  "author": "YG",
+  "homepage": "https://github.com/YG/dsh-client-ui-skin-bayern#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/YG/dsh-client-ui-skin-bayern.git"
+  },
+  "bugs": {
+    "url": "https://github.com/YG/dsh-client-ui-skin-bayern/issues"
+  },
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "dsh-client",
+    "deepseek-harness",
+    "skin",
+    "theme",
+    "bayern",
+    "fcb",
+    "football",
+    "soccer"
+  ]
+}

@@ -1,0 +1,6 @@
+# bayern skin bundle patch: inserts its dsh.client row into the web plugin roster.
+# Install with `dsh plugin --profile <name> add <path-or-npm-name>`; only one
+# skin may be active at a time — disable the other skin row when enabling this.
+- insert:
+    - id: ui-skin-bayern
+      name: 'dsh-client-ui-skin-bayern'

@@ -1,0 +1,14 @@
+# Smoke overlay: boot the web profile on an isolated port with remote-web-ui and
+# the market off, so a second dsh instance can validate the skin without
+# touching the running one.
+- id: remote-web-ui
+  name: '@linxin666/dsh-remote-web-ui'
+  disabled: true
+- id: dshmarket
+  name: dshmarket
+  disabled: true
+- id: webserver
+  name: '@deepseek-ai/dsh-host-webserver'
+  config:
+    host: '127.0.0.1'
+    port: 3099
