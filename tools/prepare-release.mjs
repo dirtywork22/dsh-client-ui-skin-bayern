@@ -130,20 +130,17 @@ const readme = `# ${REPO}
 ## 安装
 
 \`\`\`sh
-# 从 GitHub 安装
+# 从 GitHub 安装（推荐）
 dsh plugin --profile web add github:${OWNER}/${REPO}
 
 # 或发布到 npm 之后
 dsh plugin --profile web add ${REPO}
 \`\`\`
 
-装完在 profile 的 \`cordis.patch.yml\` 里挂载（用户 patch 层热重载，改完刷新页面即可）：
+\`dsh plugin add\` 会自动把这个包登记进 profile 的 \`dsh.profile.bundles\`，
+**不需要手改任何配置文件**；刷新页面即可看到皮肤。
 
-\`\`\`yaml
-- insert:
-    - id: ui-skin-bayern
-      name: ${REPO}
-\`\`\`
+想关掉皮肤时把它从 \`bundles\` 里去掉，或给对应的加载项加 \`disabled: true\`。
 
 皮肤互斥：同一时刻只启用一个皮肤，启用本皮肤时给其它皮肤行加 \`disabled: true\`。
 
