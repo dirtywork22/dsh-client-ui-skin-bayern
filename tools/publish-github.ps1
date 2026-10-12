@@ -17,7 +17,7 @@
 #>
 param(
   [Parameter(Mandatory = $true)][string]$Token,
-  [string]$Owner = 'YG',
+  [string]$Owner = 'dirtywork22',
   [string]$Repo = 'dsh-client-ui-skin-bayern',
   [switch]$SkipMarket
 )

@@ -20,7 +20,7 @@ import { fileURLToPath } from 'node:url'
 const root = join(dirname(fileURLToPath(import.meta.url)), '..')
 const args = process.argv.slice(2)
 const ownerArg = args.indexOf('--owner')
-const OWNER = ownerArg >= 0 ? args[ownerArg + 1] : 'YG'
+const OWNER = ownerArg >= 0 ? args[ownerArg + 1] : 'dirtywork22'
 const outArg = args.indexOf('--out')
 const OUT = outArg >= 0 ? args[outArg + 1] : join(root, 'release', 'dsh-client-ui-skin-bayern')
 const REPO = 'dsh-client-ui-skin-bayern'

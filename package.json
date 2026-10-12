@@ -31,14 +31,14 @@
     "react": "^18.2.0",
     "@deepseek-ai/cordis": "^4.0.1"
   },
-  "author": "YG",
-  "homepage": "https://github.com/YG/dsh-client-ui-skin-bayern#readme",
+  "author": "dirtywork22",
+  "homepage": "https://github.com/dirtywork22/dsh-client-ui-skin-bayern#readme",
   "repository": {
     "type": "git",
-    "url": "https://github.com/YG/dsh-client-ui-skin-bayern.git"
+    "url": "https://github.com/dirtywork22/dsh-client-ui-skin-bayern.git"
   },
   "bugs": {
-    "url": "https://github.com/YG/dsh-client-ui-skin-bayern/issues"
+    "url": "https://github.com/dirtywork22/dsh-client-ui-skin-bayern/issues"
   },
   "keywords": [
     "dsh",

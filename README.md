@@ -32,7 +32,7 @@
 
 ```sh
 # 从 GitHub 安装
-dsh plugin --profile web add github:YG/dsh-client-ui-skin-bayern
+dsh plugin --profile web add github:dirtywork22/dsh-client-ui-skin-bayern
 
 # 或发布到 npm 之后
 dsh plugin --profile web add dsh-client-ui-skin-bayern
