@@ -51,6 +51,9 @@ cpSync(join(root, 'lib/index.js'), join(OUT, 'lib/index.js'))
 const pkg = JSON.parse(readFileSync(join(root, 'package.json'), 'utf8'))
 pkg.version = '0.3.0'
 pkg.author = OWNER
+// Keep the published description in sync with the shipped roster rather than
+// inheriting whatever the working copy happens to say.
+pkg.description = 'FC Bayern München skin for the dsh web GUI: home-red / away-white canvases, five backdrops (real match photo, drawn shirt, squad wall, Allianz-Arena, plain), 19 first-team players, 4 accent colours.'
 pkg.homepage = `${REPO_URL}#readme`
 pkg.repository = { type: 'git', url: `${REPO_URL}.git` }
 pkg.bugs = { url: `${REPO_URL}/issues` }
