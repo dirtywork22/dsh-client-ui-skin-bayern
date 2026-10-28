@@ -1,7 +1,7 @@
 {
   "name": "dsh-client-ui-skin-bayern",
-  "description": "FC Bayern München skin for the dsh web GUI: home-red / away-white canvases, five backdrops (real match photo, drawn shirt, squad wall, Allianz-Arena, plain), 19 first-team players, 4 accent colours.",
-  "version": "0.3.0",
+  "description": "FC Bayern München skin for the dsh web GUI: home-red / away-white canvases, 19 first-team player match photos plus drawn shirt, squad wall, Allianz-Arena and plain backdrops, 4 accent colours.",
+  "version": "0.4.0",
   "type": "module",
   "main": "lib/index.js",
   "exports": {
@@ -24,7 +24,8 @@
     "README.md",
     "LICENSE",
     "preview",
-    "docs"
+    "docs",
+    "photos"
   ],
   "license": "MIT",
   "peerDependencies": {

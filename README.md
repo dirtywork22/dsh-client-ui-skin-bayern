@@ -3,9 +3,9 @@
 [![awesome · DSH plugin](https://awesome-dsh-plugin.com/badge.svg)](https://awesome-dsh-plugin.com)
 
 拜仁慕尼黑（FC Bayern München）主题的 DSH Web 界面皮肤 —— 主场红 / 客场白双配色，
-真实赛场球员照片背景，外加四种程序绘制的插画背景。全部通过 dsh 的 `--dsw-*` 设计 token
-重映射，与 `@pakiknowledge/dsh-client-ui-skin-claude` 同构（一个 `dsh.client.platform = web`
-的浏览器端 bundle）。
+真实赛场球员照片背景，外加四种程序绘制的插画背景。全部通过 dsh 的
+`--dsw-*` 设计 token 重映射，与 `@pakiknowledge/dsh-client-ui-skin-claude` 同构
+（一个 `dsh.client.platform = web` 的浏览器端 bundle）。
 
 ![暗色 · 主场红](preview/dark.png)
 ![亮色 · 客场白](preview/light.png)
@@ -25,7 +25,7 @@
 - 亮 / 暗双主题跟随系统；侧栏毛玻璃、俱乐部色顶部细线、俱乐部色滚动条与选中色
 - 照片缺失时优雅回退：某个球员没有照片，`photo` 主题会自动改用该球员的球衣插画
 
-![插画背景](docs/backdrop-squad.png)
+![阵容号码墙](docs/backdrop-squad.png)
 ![安联球场](docs/backdrop-stadium.png)
 
 ## 安装
@@ -45,28 +45,28 @@ dsh plugin --profile web add dsh-client-ui-skin-bayern
 
 皮肤互斥：同一时刻只启用一个皮肤，启用本皮肤时给其它皮肤行加 `disabled: true`。
 
-## 照片不随包分发
+## 背景照片说明
 
-这个仓库**不含**任何球员照片：赛场照的版权属于原媒体 / 摄影师。安装后你是
-「四种程序绘制的插画背景 + 空照片表」，两种方式补上照片：
+仓库自带 19 名一线队球员的赛场照片：它们已经内联进 `lib/client.js`（安装即生效），
+原图与来源记录保留在 `photos/` 和 `photos/credits.json` 里，方便替换或重新裁切。
+
+照片取自公开图片索引与公开报道，**版权归原媒体与摄影师所有**；本项目仅作个人、
+非商业的主题化使用，不代表任何官方授权或背书。若权利人希望移除某张图片，
+开个 issue 即可，会立刻删除对应文件并更新发布包。
+
+换成你自己的图：
 
 ```sh
-# 1) 一键抓取（从公开图片索引，排除图库 / 水印源，抓完自动嵌入并重新嵌入 bundle）
-node tools/fetch-photos.mjs
+# 1) 把图片放到 photos/<球衣号码>.jpg（已是 16:9 的话可直接用）
+#    竖构图 / 海报可以用 --frame blur 完整保留原图内容
+node tools/from-image.mjs 我的图.jpg 42 --frame blur --keep-source
 
-# 2) 或者用你自己的图：把图片放进 photos/<球衣号码>.jpg
+# 2) 重新内联进 bundle
 node tools/embed-photos.mjs
 ```
 
-`embed-photos.mjs` 会把 `photos/` 里的图片以 data URI 内联进 `lib/client.js`，
-所以刷新页面即生效，不需要重新安装。照片仅供本地个人使用，请自行确认素材授权。
-
-想用竖构图 / 海报当背景时，`tools/from-image.mjs` 可以完整保留原图内容
-（两侧用图自身的模糊延伸填满 16:9）：
-
-```sh
-node tools/from-image.mjs photos/_user/my-poster.jpg 42 --frame blur --keep-source
-```
+也可以完全不用照片：把「背景主题」切到球员球衣 / 阵容号码墙 / 安联球场 / 纯色即可。
+某个球员没有照片时，照片主题会自动回退成他的球衣插画。
 
 ## 设置（设置 → 通用）
 
@@ -107,3 +107,4 @@ dsh web --patch tools/smoke-overlay.yml --port 3099 --no-open
 
 MIT（见 [LICENSE](LICENSE)）。插画背景全部是代码绘制的几何图形与文字，队徽为占位图形，
 不含任何俱乐部官方素材；球员姓名与号码仅用于个人非商业的主题化描述，相关商标归其权利人所有。
+背景照片的版权归原媒体与摄影师所有，详见上文「背景照片说明」。

@@ -1,6 +1,5 @@
 node_modules/
 tools/.render-test/
-photos/_user/
 release/
 release-art/
 *.log
