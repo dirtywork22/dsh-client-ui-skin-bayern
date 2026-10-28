@@ -3,7 +3,7 @@
 [![awesome · DSH plugin](https://awesome-dsh-plugin.com/badge.svg)](https://awesome-dsh-plugin.com)
 
 拜仁慕尼黑（FC Bayern München）主题的 DSH Web 界面皮肤 —— 主场红 / 客场白双配色，
-真实赛场球员照片背景，外加四种程序绘制的插画背景。全部通过 dsh 的
+19 名一线队球员的真实赛场照片背景，外加四种程序绘制的插画背景。全部通过 dsh 的
 `--dsw-*` 设计 token 重映射，与 `@pakiknowledge/dsh-client-ui-skin-claude` 同构
 （一个 `dsh.client.platform = web` 的浏览器端 bundle）。
 
@@ -31,7 +31,7 @@
 ## 安装
 
 ```sh
-# 从 GitHub 安装（推荐）
+# 从 GitHub 安装
 dsh plugin --profile web add github:dirtywork22/dsh-client-ui-skin-bayern
 
 # 或发布到 npm 之后
@@ -47,26 +47,24 @@ dsh plugin --profile web add dsh-client-ui-skin-bayern
 
 ## 背景照片说明
 
-仓库自带 19 名一线队球员的赛场照片：它们已经内联进 `lib/client.js`（安装即生效），
+19 张赛场照已经内联进 `lib/client.js` —— **装完即生效，不需要额外步骤**。
 原图与来源记录保留在 `photos/` 和 `photos/credits.json` 里，方便替换或重新裁切。
 
 照片取自公开图片索引与公开报道，**版权归原媒体与摄影师所有**；本项目仅作个人、
 非商业的主题化使用，不代表任何官方授权或背书。若权利人希望移除某张图片，
-开个 issue 即可，会立刻删除对应文件并更新发布包。
+开个 issue 即可，会立刻删除对应文件并发布新版本。
 
 换成你自己的图：
 
 ```sh
-# 1) 把图片放到 photos/<球衣号码>.jpg（已是 16:9 的话可直接用）
-#    竖构图 / 海报可以用 --frame blur 完整保留原图内容
+# 1) 竖构图 / 海报：--frame blur 完整保留原图内容，两侧用自身模糊延伸填满 16:9
 node tools/from-image.mjs 我的图.jpg 42 --frame blur --keep-source
 
-# 2) 重新内联进 bundle
+# 2) 重新内联进 bundle（刷新页面即生效）
 node tools/embed-photos.mjs
 ```
 
 也可以完全不用照片：把「背景主题」切到球员球衣 / 阵容号码墙 / 安联球场 / 纯色即可。
-某个球员没有照片时，照片主题会自动回退成他的球衣插画。
 
 ## 设置（设置 → 通用）
 
@@ -88,7 +86,7 @@ node tools/embed-photos.mjs
 |---|---|
 | 抓取球员照片 | `node tools/fetch-photos.mjs`（`--only 9 42` 指定号码，`FORCE=1` 覆盖） |
 | 嵌入照片 | `node tools/embed-photos.mjs` |
-| 生成预览图 | `node tools/preview.mjs`（`--art` 出插画版） |
+| 生成预览图 | `node tools/preview.mjs` |
 | 设置面板自检 | `node tools/verify-settings.mjs` |
 | 人脸留白自检 | `python tools/facecheck.py 0.12`（OpenCV 检出脸部并量化头顶空间） |
 | 补顶部保护带 | `python tools/headroom.py 0.15 [号码...]`（头顶太贴边时自动下压） |
@@ -106,5 +104,5 @@ dsh web --patch tools/smoke-overlay.yml --port 3099 --no-open
 ## 许可
 
 MIT（见 [LICENSE](LICENSE)）。插画背景全部是代码绘制的几何图形与文字，队徽为占位图形，
-不含任何俱乐部官方素材；球员姓名与号码仅用于个人非商业的主题化描述，相关商标归其权利人所有。
-背景照片的版权归原媒体与摄影师所有，详见上文「背景照片说明」。
+不含任何俱乐部官方素材；球员姓名与号码仅用于个人非商业的主题化描述，
+相关商标归其权利人所有。背景照片的版权归原媒体与摄影师所有，详见上文「背景照片说明」。
